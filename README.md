@@ -20,9 +20,16 @@ This example uses Pulsar's `.hide` class, which is a screenreader-friendly hidin
 The component should be initialised with references to the required containers.
 
 ```
-liveRegion.init({
-    assertiveContainer: '.js-live-region-assertive',
-    politeContainer: '.js-live-region-polite'
+const $ = require('jquery');
+const LiveRegion = require('./src/LiveRegion');
+
+$(function () {
+    const liveRegion = new LiveRegion($('html'));
+    
+    liveRegion.init({
+        assertiveContainer: '.js-live-region-assertive',
+        politeContainer: '.js-live-region-polite'
+    });
 });
 ```
 
