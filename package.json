@@ -1,0 +1,66 @@
+{
+  "version": "1.0.3",
+  "name": "pulsar-live-region",
+  "description": "Provide simple methods for announcing changes to screen readers",
+  "homepage": "https://github.com/jadu/pulsar-live-region",
+  "author": "Paul Stanton <paul.stanton@jadu.co.uk>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jadu/pulsar-live-region.git"
+  },
+  "bugs": {
+    "url": "http://github.com/jadu/pulsar/issues"
+  },
+  "main": "index",
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015"
+          ]
+        }
+      ]
+    ]
+  },
+  "scripts": {
+    "build": "browserify index.js --outfile dist/LiveRegion.js",
+    "coverage": "mochify --transform [ babelify ] --plugin [ mochify-istanbul --exclude '**/+(tests|node_modules|libs)/**/*' --report lcov --dir ./coverage --instrumenter babel-istanbul] --reporter spec ./test/harness './test/unit/**/*Test.js'",
+    "jshint": "jshint .",
+    "mocha": "mochify -r ./test/harness --recursive --reporter spec",
+    "test": "npm run mocha"
+  },
+  "dependencies": {
+    "jquery": "~3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-istanbul": "^0.12.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^7.3.0",
+    "browserify": "^11.2.0",
+    "chai": "^2.3.0",
+    "grunt": "^1.0.3",
+    "grunt-browserify": "^5.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "jshint": "^2.8.0",
+    "matchdep": "^2.0.0",
+    "minimatch": ">=3.0.2",
+    "mochify": "^2.19.0",
+    "mochify-istanbul": "^2.4.2",
+    "sinon": "^2.4.1",
+    "sinon-chai": "^2.8.0",
+    "sinon-jquery": "^1.0.2"
+  },
+  "license": "MIT",
+  "directories": {
+    "test": "test"
+  },
+  "keywords": [
+    "jadu",
+    "pulsar",
+    "calendar",
+    "aria live"
+  ]
+}
