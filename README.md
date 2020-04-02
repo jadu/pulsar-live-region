@@ -6,7 +6,7 @@ Simple methods for updating a live region to communicate state changes to assist
 
 The Live Region component needs two containers to be placed in the DOM on page load, these are then populated by the methods detailed below.
 
-```
+```html
 <div role="region" class="js-live-region-polite hide" aria-live="polite"></div>
 <div role="region" class="js-live-region-assertive hide" aria-live="assertive"></div>
 ```
@@ -19,7 +19,7 @@ This example uses Pulsar's `.hide` class, which is a screenreader-friendly hidin
 
 The component should be initialised with references to the required containers.
 
-```
+```js
 const $ = require('jquery');
 const LiveRegion = require('./src/LiveRegion');
 
@@ -37,7 +37,7 @@ $(function () {
 
 There are two methods `polite()` and `assertive()`.
 
-```
+```js
 $('.example-polite-trigger').on('click', function () {
     liveRegion.polite('this is a polite annoucement');
 });
@@ -51,12 +51,12 @@ $('.example-assertive-trigger').on('click', function () {
 
 Run the test suite to check expected functionality.
 
-```
+```shell
 npm test
 ```
 
 Generate a code coverage report, which can be viewed by opening `/coverage/lcov-report/index.html`
 
-```
+```shell
 npm run coverage
 ```
