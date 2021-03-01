@@ -22,13 +22,12 @@
 <body>
     <h1>Pulsar Live Region Service</h1>
 
-    <div role="region" class="js-live-region-polite hide" aria-live="polite"></div>
-    <div role="region" class="js-live-region-assertive hide" aria-live="assertive"></div>
+    <div role="status" class="hide js-live-region-polite" aria-live="polite"></div>
+    <div role="alert" class="hide js-live-region-assertive" aria-live="assertive"></div>
 
     <button class="js-trigger-polite">Trigger Polite Announcement</button>
     <button class="js-trigger-assertive">Trigger Assertive Announcement</button>
 
-    <script src="../node_modules/jquery/dist/jquery.js"></script>
     <script src="../dist/LiveRegion.js"></script>
 </body>
 </html>
