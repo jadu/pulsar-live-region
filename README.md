@@ -20,12 +20,12 @@ This example uses Pulsar's `.hide` class, which is a screenreader-friendly hidin
 The component should be initialised with references to the required containers.
 
 ```js
-const $ = require('jquery');
-const LiveRegion = require('./src/LiveRegion');
+import $ from 'jquery';
+import LiveRegion from './src/LiveRegion';
 
 $(function () {
     const liveRegion = new LiveRegion($('html'));
-    
+
     liveRegion.init({
         assertiveContainer: '.js-live-region-assertive',
         politeContainer: '.js-live-region-polite'
@@ -38,13 +38,8 @@ $(function () {
 There are two methods `polite()` and `assertive()`.
 
 ```js
-$('.example-polite-trigger').on('click', function () {
-    liveRegion.polite('this is a polite annoucement');
-});
-
-$('.example-assertive-trigger').on('click', function () {
-    liveRegion.assertive('this is an assertive annoucement');
-});
+$('.js-trigger-polite').on('click', () => liveRegion.polite('This is a polite annoucement'));
+$('.js-trigger-assertive').on('click', () => liveRegion.assertive('This is an assertive annoucement'));
 ```
 
 <h2>Tests</h2>
