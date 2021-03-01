@@ -27,7 +27,7 @@
   "scripts": {
     "build": "browserify index.js --outfile dist/LiveRegion.js",
     "coverage": "mochify --transform [ babelify ] --plugin [ mochify-istanbul --exclude '**/+(tests|node_modules|libs)/**/*' --report lcov --dir ./coverage --instrumenter babel-istanbul] --reporter spec ./test/harness './test/unit/**/*Test.js'",
-    "jshint": "jshint .",
+    "jshint": "jshint",
     "mocha": "mochify -r ./test/harness --recursive --reporter spec",
     "test": "npm run mocha"
   },
@@ -49,9 +49,9 @@
     "minimatch": ">=3.0.2",
     "mochify": "^6.6.0",
     "mochify-istanbul": "^2.4.2",
-    "sinon": "^2.4.1",
-    "sinon-chai": "^2.8.0",
-    "sinon-jquery": "^1.0.2"
+    "sinon": "^4.3.0",
+    "sinon-chai": "^2.11.0",
+    "sinon-jquery": "^1.0.3"
   },
   "license": "MIT",
   "directories": {
@@ -60,7 +60,6 @@
   "keywords": [
     "jadu",
     "pulsar",
-    "calendar",
     "aria live"
   ]
 }
